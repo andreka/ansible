@@ -1,0 +1,38 @@
+
+---
+- hosts: localhost
+  become: yes
+  vars:
+    page_title: My Testing Page
+    page_description: This is my Testing page description.
+  tasks:
+    - name: Install Nginx
+      apt:
+        name: nginx
+        state: latest
+
+    - name: Apply Page Template
+      template:
+        src: latihan-files/testing-page.html.j2
+        dest: /var/www/html/index.html
+
+    - name: Apply config nginx
+      template:
+        src: latihan-files/config-nginx.j2
+        dest: /etc/nginx/sites-enabled/default
+
+    - name: restart service nginx on debian, if running
+      ansible.builtin.service:
+         name: nginx
+         state: reloaded
+
+
+    - name: Allow all access to tcp port 8090
+      ufw:
+        rule: allow
+        port: '8090'
+        proto: tcp
+    - name: memastikan service http sudah naik
+      uri:
+        url: http://localhost:8090
+        method: get
