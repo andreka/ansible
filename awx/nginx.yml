@@ -1,5 +1,5 @@
 ---
-- host:all
+- host: all
   become: yes
   vars:
     page_title: My Testing Page
