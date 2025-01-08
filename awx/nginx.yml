@@ -1,6 +1,5 @@
-
 ---
-- hosts: xmp
+- hosts: hosts
   become: yes
   vars:
     page_title: My Testing Page
