@@ -19,6 +19,10 @@
    #   template:
    #     src: latihan-files/config-nginx.j2
    #     dest: /etc/nginx/sites-enabled/default
+   - name: Clone a repo with separate git directory
+     ansible.builtin.git:
+        repo: 'https://github.com/andreka/ansible.git'
+        dest: /tmp/checkout
 
     - name: restart service nginx on debian, if running
       ansible.builtin.service:
