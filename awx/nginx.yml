@@ -10,10 +10,10 @@
         name: nginx
         state: latest
 
-    - name: Apply Page Template
-      template:
-        src: latihan-files/testing-page.html.j2
-        dest: /var/www/html/index.html
+   # - name: Apply Page Template
+   #   template:
+   #     src: latihan-files/testing-page.html.j2
+    #    dest: /var/www/html/index.html
 
     - name: Apply config nginx
       template:
