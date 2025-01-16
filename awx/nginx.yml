@@ -15,10 +15,10 @@
    #     src: latihan-files/testing-page.html.j2
     #    dest: /var/www/html/index.html
 
-    - name: Apply config nginx
-      template:
-        src: latihan-files/config-nginx.j2
-        dest: /etc/nginx/sites-enabled/default
+   # - name: Apply config nginx
+   #   template:
+   #     src: latihan-files/config-nginx.j2
+   #     dest: /etc/nginx/sites-enabled/default
 
     - name: restart service nginx on debian, if running
       ansible.builtin.service:
