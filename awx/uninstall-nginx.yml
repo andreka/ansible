@@ -1,12 +1,12 @@
 - hosts: webserver
   become: true
   tasks:
-    - name: "Uninstall NginX"
+    - name: Stop service httpd, if started
+      ansible.builtin.service:
+         name: nginx
+         state: stopped
+    - name: remove nginx
       apt:
         name: nginx
         state: absent
-
-    - name: "Stop Nginx Services"
-      service:
-        name: nginx
-        state: stopped
+        autoremove: yes
