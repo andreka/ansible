@@ -1,5 +1,5 @@
 ---
-  hosts: webserver
+ - hosts: webserver
   become: true
   vars:
     page_title: My Testing Page
