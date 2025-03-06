@@ -1,4 +1,6 @@
-task:
+---
+- name: install Nginx
+  task:
     - name: Install Nginx
       apt:
         name: nginx
