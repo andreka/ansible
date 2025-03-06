@@ -10,5 +10,6 @@
                name: nginx
                state: started
                enabled: yes
-               register: "output"
-    - debug: var=output.stdout_lines
+      register: result
+    - debug: 
+        msh: "{(result)}"
