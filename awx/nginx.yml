@@ -9,7 +9,7 @@
       apt:
         name: nginx
         state: latest
-    when ansible_facts["os_name"] == "Ubuntu"
+    #when ansible_facts["os_name"] == "Ubuntu"
 
    # - name: Apply Page Template
    #   template:
