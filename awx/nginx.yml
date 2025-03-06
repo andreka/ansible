@@ -4,7 +4,6 @@
     page_title: My Testing Page
     page_description: This is my Testing page description.
   tasks:
-  - package:
     - name: Install Nginx
       apt:
         name: nginx
