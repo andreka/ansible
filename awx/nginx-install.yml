@@ -1,0 +1,5 @@
+  tasks:
+    - name: Install Nginx
+      apt:
+        name: nginx
+        state: latest
