@@ -12,4 +12,4 @@
                enabled: yes
       register: result
     - debug: 
-        msg: "{(result)}"
+        msg: "{{result}}"
