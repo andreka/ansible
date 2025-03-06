@@ -2,7 +2,7 @@
   - name: "Playing with Ansible."
     hosts: webserver
     tasks:
-        - name: "restart service nginx on debian, if running"
-          ansible.builtin.service:
-             name: nginx
-             state: reloaded
+          - name: "restart service nginx on debian, if running"
+            ansible.builtin.service:
+                                name: nginx
+                                state: reloaded
