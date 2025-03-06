@@ -6,6 +6,7 @@
     tasks:
 # Below task will execute the list of directories and files present
     - name: restart service nginx on debian, if running
-      ansible.builtin.service:
-         name: nginx
-         state: reloaded
+      service:
+               name: nginx
+               state: started
+               enabled: yes
