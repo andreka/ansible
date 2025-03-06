@@ -1,12 +1,11 @@
 ---
-  - name: "NGINX."
+  - name: "Playing with Ansible."
 # Ansible Playbook will run on the Localhost where AWX is installed
     hosts: webserver
-    become: true
+    #connection: local
     tasks:
 # Below task will execute the list of directories and files present
-    - package:
-        name: "Install Nginx"
-          apt: 
-              name : nginx
-              state: "latest"
+    - name: "Install Nginx"
+      apt: 
+          name : nginx
+          state: "latest"
