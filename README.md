@@ -1,2 +1,0 @@
-# ansible
-untuk ansible
