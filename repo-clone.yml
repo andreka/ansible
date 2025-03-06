@@ -1,6 +1,10 @@
-- name: Clone a repo with separate git directory
-      ansible.builtin.git:
-        repo: 'https://github.com/andreka/ansible.git'
-        dest: /tmp/checkout
-        clone: yes
-        update: yes
+---
+  - name: "Playing with Ansible."
+    hosts: webserver
+    tasks:
+      - name: Clone a repo with separate git directory
+            ansible.builtin.git:
+              repo: 'https://github.com/andreka/ansible.git'
+              dest: /tmp/checkout
+              clone: yes
+              update: yes
