@@ -5,8 +5,10 @@
     #connection: local
     tasks:
 # Below task will execute the list of directories and files present
-    - name: restart service nginx on debian, if running
+    - name: make sure  nginx running
       service:
                name: nginx
                state: started
                enabled: yes
+               register: "output"
+    - ebug: var=output.stdout_lines
