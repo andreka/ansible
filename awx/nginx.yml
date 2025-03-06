@@ -4,6 +4,7 @@
     page_title: My Testing Page
     page_description: This is my Testing page description.
   tasks:
+  - when ansible_facts["os_name"] == "Ubuntu"
     - name: Install Nginx
       apt:
         name: nginx
