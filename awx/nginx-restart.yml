@@ -1,4 +1,13 @@
-- name: restart service
+---
+  - name: "Playing with Ansible."
+# Ansible Playbook will run on the Localhost where AWX is installed
+    hosts: webserver
+    #connection: local
+    tasks:
+# Below task will execute the list of directories and files present
+    - name: restart service nginx on debian, if running
       ansible.builtin.service:
          name: nginx
          state: reloaded
+
+          
