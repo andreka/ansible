@@ -1,0 +1,7 @@
+- hosts: webserver
+  become: true
+  tasks:
+    - name: Stop service httpd, if started
+      ansible.builtin.service:
+         name: nginx
+         state: stopped
