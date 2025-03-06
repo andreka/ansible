@@ -11,4 +11,4 @@
                state: started
                enabled: yes
                register: "output"
-    - ebug: var=output.stdout_lines
+    - debug: var=output.stdout_lines
