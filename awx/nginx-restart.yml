@@ -1,4 +1,4 @@
-- name: restart service nginx on debian, if running
+- name: restart service
       ansible.builtin.service:
          name: nginx
          state: reloaded
