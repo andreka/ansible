@@ -4,6 +4,11 @@
     tasks:
     - name: "kubernetes get pods"
       shell: "kubectl get pod -o wide --all-namespaces"
+      register: "output-keluaran"
+    - name: Check result
+      debug:
+        msg: "Result of service configuration: {{ output-keluaran }}"
+     # when: result is failed
       
     - name: "kubernetes get nodes"
       shell: "kubectl get nodes"
