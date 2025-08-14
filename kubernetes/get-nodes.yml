@@ -1,6 +1,6 @@
 ---
   - name: "Playing kubernetes with Ansible."
-    hosts: '{{ host }}'
+    hosts: all
     tasks:
     - name: "kubernetes get nodes"
       shell: "kubectl get nodes"
