@@ -1,7 +1,7 @@
 ---
-  - name: "Playing kubernetes with Ansible."
-    hosts: '{{ host }}'
-    tasks:
+  #- name: "Playing kubernetes with Ansible."
+  #  hosts: '{{ host }}'
+  #  tasks:
     - name: "kubernetes get nodes"
       shell: "kubectl get nodes"
       register: "output"
