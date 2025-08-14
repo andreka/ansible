@@ -2,6 +2,9 @@
   - name: "Playing kubernetes with Ansible."
     hosts: all
     tasks:
+    - name: "kubernetes import Config"
+      shell: " export KUBECONFIG=/etc/kubernetes/admin.conf"
+      register: "output
     - name: "kubernetes get nodes"
       shell: "kubectl get nodes"
       register: "output"
