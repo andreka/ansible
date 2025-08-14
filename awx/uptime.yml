@@ -1,3 +1,0 @@
----
-   - name: Execute a basic command
-            ansible.builtin.command: uptime
