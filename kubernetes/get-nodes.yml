@@ -1,0 +1,8 @@
+---
+  - name: "Playing kubernetes with Ansible."
+    hosts: ""
+    tasks:
+    - name: "kubernetes get nodes"
+      shell: "kubectl get nodes"
+      register: "output"
+    - debug: var=output.stdout_lines
