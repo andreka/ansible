@@ -1,7 +1,7 @@
 ---
 - name: Using a REST API
   become: false
-  hosts: All
+  hosts: all
   gather_facts: false
   tasks:
     - debug:
