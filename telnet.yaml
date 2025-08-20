@@ -1,8 +1,8 @@
 ---
-  - name: "Playing kubernetes with Ansible."
+  - name: "Testing"
     hosts: ""
     tasks:
-    - name: "kubernetes get nodes"
-      shell: "kubectl get nodes"
+    - name: "test telnet"
+      shell: "telnet {{ ip_telnet }}"
       register: "output"
     - debug: var=output.stdout_lines
