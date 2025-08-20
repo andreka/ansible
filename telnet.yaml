@@ -1,6 +1,6 @@
 ---
   - name: "Testing"
-    hosts: ""
+    hosts: all
     tasks:
     - name: "test telnet"
       shell: "telnet {{ host }}"
