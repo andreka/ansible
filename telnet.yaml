@@ -3,6 +3,6 @@
     hosts: ""
     tasks:
     - name: "test telnet"
-      shell: "telnet {{ ip_telnet }}"
+      shell: "telnet {{ host }}"
       register: "output"
     - debug: var=output.stdout_lines
