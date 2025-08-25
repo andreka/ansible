@@ -6,6 +6,15 @@
   tasks:
     - debug:
         msg: “Let’s call an API”
+    - name: post to consul
+      uri:
+        url: http://192.168.59.133:8080/api/v1/namespaces/default/configmaps/mysql-init-config
+        method: get
+         register: results
+        #body: "{{ lookup('file','mesos-consul.json') }}"
+        #body_format: json
+        #headers:
+          #Content-Type: "application/json"
 
     - name: Everyone loves a good Chuck Norris joke
       uri:
