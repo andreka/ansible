@@ -1,6 +1,8 @@
 ---
 - name: "Install postgres"
   hosts: all
+  vars:
+    postgresql_version : 13
   pre_tasks:
       - name: Add PostgreSQL PGDG GPG key
         ansible.builtin.apt_key:
