@@ -1,5 +1,5 @@
 ---
-- name: "Testing"
+- name: "Install postgres"
     hosts: all
     pre_tasks:
       - name: "Install packages"
