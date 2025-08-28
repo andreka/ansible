@@ -1,1 +1,9 @@
-
+- name:Uninstall PostgreSQL
+  hosts: all
+  vars:
+        ansible_python_interpreter: /usr/bin/python3 # Or the correct path
+  tasks:
+        - name: Uninnstall postgresql
+          ansible.builtin.apt:
+            name: postgresql
+            state: absent
