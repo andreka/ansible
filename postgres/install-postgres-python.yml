@@ -6,5 +6,5 @@
   tasks:
         - name: Install postgresql
           ansible.builtin.apt:
-            name: postgresql-{{ postgresql_version }}
+            name: postgresql #-{{ postgresql_version }}
             state: present
