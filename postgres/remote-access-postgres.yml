@@ -21,6 +21,6 @@
         
       handlers:
     - name: Restart PostgreSQL
-        ansible.builtin.systemd:
+      ansible.builtin.systemd:
         name: postgresql
         state: restarted
