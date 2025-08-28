@@ -7,5 +7,5 @@
       register: pg_version
     - name: Display PostgreSQL service status
       ansible.builtin.debug:
-        msg: "PostgreSQL version : {{ pg_version }}"
+        msg: "PostgreSQL version : {{ pg_version.stdout }}"
       #when: pg_status.status is defined
