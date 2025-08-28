@@ -6,7 +6,8 @@
         - name: Uninstall postgresql
           ansible.builtin.apt:
             name: postgresql
-            state: absent     
+            state: absent
+            force : true
           register: apt_output
         - name: Display apt output
           ansible.builtin.debug:
