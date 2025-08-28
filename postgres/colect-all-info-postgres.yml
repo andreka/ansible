@@ -1,0 +1,8 @@
+---
+  - name: "Collect all info"
+    hosts: all
+    tasks:
+    - name: Collect all info except databases
+      community.postgresql.postgresql_info:
+        filter:
+        - "!databases"

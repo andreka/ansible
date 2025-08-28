@@ -1,0 +1,11 @@
+---
+  - name: "Restart service postgres"
+    hosts: all
+    tasks:
+    - name: Restart Service Postgres
+      ansible.builtin.service:
+        name: postgresql
+        state: restarted
+       
+    - debug:
+        msg: "PostgreSQL service is restart: {{ pg_status.status.ActiveState == 'active' }}"

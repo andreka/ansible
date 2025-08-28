@@ -1,0 +1,12 @@
+---
+  - name: "Start service postgres"
+    hosts: all
+    tasks:
+    - name: Start Service Postgres
+      ansible.builtin.service:
+        name: postgresql  # atau postgresql-13 untuk pgsql
+        state: started
+        enabled: true
+
+    #- debug:
+    #    var: pg_service_status.status.ActiveState

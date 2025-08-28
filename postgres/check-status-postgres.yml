@@ -1,0 +1,14 @@
+---
+  - name: "Get service status psotgres"
+    hosts: all
+    tasks:
+    - name: Check PostgreSQL service status
+      ansible.builtin.service:
+        name: postgresql  # Or the specific service name like postgresql-15
+        state: started
+      register: pg_status
+      ignore_errors: true # To prevent playbook failure if service is not running
+    - name: Display PostgreSQL service status
+      ansible.builtin.debug:
+        msg: "PostgreSQL service is running: {{ pg_status.status.ActiveState == 'active' }}"
+      when: pg_status.status is defined
