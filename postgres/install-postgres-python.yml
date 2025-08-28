@@ -1,9 +1,10 @@
 - name: Install PostgreSQL
   hosts: all
   vars:
+        postgresql_version : 16
         ansible_python_interpreter: /usr/bin/python3 # Or the correct path
   tasks:
         - name: Install postgresql
           ansible.builtin.apt:
-            name: postgresql
+            name: postgresql-{{ postgresql_version }}
             state: present
