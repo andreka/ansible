@@ -1,6 +1,7 @@
 ---
   - name: "Configure pg_hba.conf for remote access"
     hosts: all
+    var : postgresql_version: 10
     tasks:
     - name: Configure pg_hba.conf for remote access
         ansible.builtin.lineinfile:
