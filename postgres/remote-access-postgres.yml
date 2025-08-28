@@ -5,14 +5,14 @@
       postgresql_version : "10"
     tasks:
     - name: Configure pg_hba.conf for remote access
-        ansible.builtin.lineinfile :
+      ansible.builtin.lineinfile :
           path: /etc/postgresql/{{ postgresql_version }}/main/pg_hba.conf
           regexp: '^#host\s+all\s+all\s+127.0.0.1/32\s+ident$'
           line: 'host    all             all             0.0.0.0/0               md5'
           backup: yes
 
     - name: Configure postgresql.conf to listen on all interfaces
-        ansible.builtin.lineinfile:
+      ansible.builtin.lineinfile:
           path: /etc/postgresql/{{ postgresql_version }}/main/postgresql.conf
           regexp: "^#listen_addresses = 'localhost'"
           line: "listen_addresses = '*'"
