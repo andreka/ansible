@@ -19,8 +19,8 @@
         backup: yes
       notify: Restart PostgreSQL
       
-  handlers:
-    - name: Restart PostgreSQL
-      ansible.builtin.systemd:
-        name: postgresql
-        state: restarted
+  	handlers:
+  	- name: Restart PostgreSQL
+  	  ansible.builtin.systemd:
+  		name: postgresql
+  		state: restarted
