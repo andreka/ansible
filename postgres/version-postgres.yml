@@ -5,3 +5,4 @@
     - name: get version postgres
       ansible.builtin.shell: psql --version
       register: pg_version
+      msg: "PostgreSQL service version : {{ pg_version }}"
