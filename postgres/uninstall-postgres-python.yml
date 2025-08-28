@@ -7,7 +7,3 @@
           ansible.builtin.apt:
             name: postgresql
             state: absent
-         - name: Uninnstall postgresql
-          ansible.builtin.apt:
-            name: postgresql-*
-            state: absent
