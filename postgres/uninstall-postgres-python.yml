@@ -6,9 +6,7 @@
         - name: Uninstall postgresql
           ansible.builtin.apt:
             name: postgresql postgresql-10
-            state: absent
-            purge: yes
-           
-       # - name: Display PostgreSQL uninstall status
-       #   ansible.builtin.debug:
-       #     msg: "Uninstall status : {{ uninstall_stat }}"
+            state: absent     
+        - name: Display PostgreSQL uninstall status
+          ansible.builtin.debug:
+            msg: "Uninstall status : {{ stdout }}"
