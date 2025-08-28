@@ -3,7 +3,12 @@
   vars:
         ansible_python_interpreter: /usr/bin/python3 # Or the correct path
   tasks:
-        - name: Uninnstall postgresql
+        - name: Uninstall postgresql
           ansible.builtin.apt:
             name: postgresql postgresql-10.23
             state: absent
+            register: uninstall_stat
+           
+        - name: Display PostgreSQL uninstall status
+          ansible.builtin.debug:
+            msg: "Uninstall status : {{ uninstall_stat }}"
