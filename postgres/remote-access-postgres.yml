@@ -17,7 +17,7 @@
           regexp: "^#listen_addresses = 'localhost'"
           line: "listen_addresses = '*'"
           backup: yes
-        notify: Restart PostgreSQL
+      notify: Restart PostgreSQL
         
       handlers:
     - name: Restart PostgreSQL
