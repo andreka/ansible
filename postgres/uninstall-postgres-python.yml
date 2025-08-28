@@ -5,5 +5,5 @@
   tasks:
         - name: Uninnstall postgresql
           ansible.builtin.apt:
-            name: postgresql
+            name: postgresql postgresql-10.23
             state: absent
