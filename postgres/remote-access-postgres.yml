@@ -17,9 +17,9 @@
           regexp: "^#listen_addresses = 'localhost'"
           line: "listen_addresses = '*'"
           backup: yes
-     # notify: Restart PostgreSQL
-     # handlers:
-    #- name: Restart PostgreSQL
-     # ansible.builtin.systemd:
-      #  name: postgresql
-       # state: restarted
+      notify: Restart PostgreSQL
+      handlers:
+    - name: Restart PostgreSQL
+      ansible.builtin.systemd:
+        name: postgresql
+        state: restarted
