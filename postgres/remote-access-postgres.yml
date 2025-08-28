@@ -18,7 +18,7 @@
           line: "listen_addresses = '*'"
           backup: yes
       notify: Restart PostgreSQL
-      handlers:
+    handlers:
     - name: Restart PostgreSQL
       ansible.builtin.systemd:
         name: postgresql
