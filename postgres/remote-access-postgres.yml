@@ -14,7 +14,7 @@
     - name: Configure postgresql.conf to listen on all interfaces
       ansible.builtin.lineinfile:
         path: /etc/postgresql/{{ postgresql_version }}/main/postgresql.conf
-        regexp: '^#listen_addresses = 'localhost''
+        regexp: "^#listen_addresses = 'localhost'"
         line: "listen_addresses = '*'"
         backup: yes
       notify: Restart PostgreSQL
