@@ -5,7 +5,7 @@
   tasks:
         - name: Uninstall postgresql
           ansible.builtin.apt:
-            name: postgresql
+            name: postgresql*
             state: absent
             force : true
           register: apt_output
