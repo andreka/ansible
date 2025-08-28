@@ -7,8 +7,12 @@
           ansible.builtin.apt:
             name: postgresql postgresql-10
             state: absent     
-            debug:
-              msg: " {{ stdout }} " 
+          register: apt_output
+        - name: Display apt output
+          ansible.builtin.debug:
+             var: apt_output 
+
+             
         #- name: Display PostgreSQL uninstall status
          # ansible.builtin.debug:
          #   msg: "Uninstall status : {{ stdout }}"
