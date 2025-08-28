@@ -2,6 +2,6 @@
   - name: "get version postgres"
     hosts: all
     tasks:
-    - name:get version postgres
+    - name: get version postgres
       ansible.builtin.shell: psql --version
       register: pg_version
