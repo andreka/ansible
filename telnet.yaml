@@ -12,6 +12,7 @@
       register: msg
       loop: "{{ ports }}"
 
-      #ansible.builtin.debug:: 
-      #  msg: "telnet {{ inventory_hostname  }} {{ port }}"
+    - name: Display PostgreSQL service status
+      ansible.builtin.debug:
+        msg: "telnet {{ inventory_hostname  }} {{ item }} {{msg.stdout}}"
       
