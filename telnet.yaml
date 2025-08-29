@@ -4,8 +4,8 @@
     vars:
       ports: 
         - 22
-        - 80
-        - 443
+        #- 80
+        #- 443
     tasks:
     - name: "Test Connection Telnet"
       shell: "telnet 192.168.59.133 {{ item }}"
