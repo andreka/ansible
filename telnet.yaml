@@ -8,11 +8,8 @@
         - 443
     tasks:
     - name: "Test Connection Telnet"
-      ansible.builtin.shell: "telnet 192.168.59.133 {{ item }}"
-      register: msg
+      shell: "telnet 192.168.59.133 {{ item }}"
+      debug: msg
       loop: "{{ ports }}"
 
-    - name: Display PostgreSQL service status
-      ansible.builtin.debug:
-        msgmsg: "telnet 192.168.59.133 {{ item }} {{msg.stdout}}"
-      
+   
