@@ -9,6 +9,6 @@
     tasks:
     - name: "Test Connection Telnet"
       ansible.builtin.shell: "telnet {{ inventory_hostname  }} {{ port }}"
-      debug: 
+      ansible.builtin.debug:: 
         msg: "telnet {{ inventory_hostname  }} {{ port }}"
       loop: "{{ ports }}"
