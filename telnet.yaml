@@ -5,7 +5,7 @@
     vars:
       ports: 
         - 22
-        #- 80
+        - 9443
         #- 443
     tasks:
     - name: "Test Connection Telnet"
@@ -17,7 +17,7 @@
     - name: Debug output of shell command
       ansible.builtin.debug:
         msg: "Output for {{ item }}: {{ shell_output.results[loop_index].stdout }}"
-      #loop: "{{ shell_output.results }}"
+      loop: "{{ shell_output.results }}"
       loop_control:
          index_var: loop_index
 
