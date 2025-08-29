@@ -14,5 +14,5 @@
 
     - name: Display PostgreSQL service status
       ansible.builtin.debug:
-        msg: "telnet 192.168.59.133 {{ item }} {{msg.stdout}}"
+        msg: "telnet 192.168.59.133 {{ item }} {{msg.stdout_lines}}"
       
