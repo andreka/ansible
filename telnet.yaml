@@ -8,7 +8,7 @@
         - 443
     tasks:
     - name: "Test Connection Telnet"
-      shell: "telnet {{ inventory_hostname  }} {{port}}"
+      shell: "telnet {{ inventory_hostname  }} {{ port }}"
       debug: 
-        msg: "telnet {{ inventory_hostname  }} {{port}}"
-      loop: {{ports}}
+        msg: "telnet {{ inventory_hostname  }} {{ port }}"
+      loop: "{{ ports }}"
