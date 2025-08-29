@@ -1,8 +1,14 @@
 ---
-  - name: "Testing"
+  - name: "Testing Ports"
     hosts: all
+    vars:
+      ports: 
+        - 22
+        - 80
+        - 443
     tasks:
-    - name: "test telnet"
-      shell: "telnet {{ inventory_hostname  }} 22"
-      register: "output"
-    - debug: var=output.stdout_lines
+    - name: "Test Connection Telnet"
+      shell: "telnet {{ inventory_hostname  }} {{port}}"
+      debug: 
+        msg: "telnet {{ inventory_hostname  }} {{port}}"
+      loop: {{ports}}
