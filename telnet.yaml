@@ -1,7 +1,7 @@
 ---
   - name: "Testing Ports"
     hosts: all
-    gather_facts: {{ ANSIBLE_GATHERING }}
+    gather_facts: "{{ ANSIBLE_GATHERING }}"
     vars:
       ports: 
         - 22
