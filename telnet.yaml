@@ -8,6 +8,7 @@
         #- 443
     tasks:
     - name: "Test Connection Telnet"
+      ignore_errors: yes
       shell: "telnet 192.168.59.133 {{ item }}"
       register: shell_output
       loop: "{{ ports }}"
