@@ -1,5 +1,5 @@
 ---
-- name: "begin query"
+- name: begin query
   hosts: all
   vars:
     postgresql_version : 13
