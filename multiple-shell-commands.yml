@@ -2,16 +2,11 @@
 - name: Execute multiple shell commands
   hosts: all
   tasks:
-    - name: Run a series of commands
-      shell: |
-        echo "Starting script..."
-        
-        su - postgres
-        psql
-        CREATE USER postgresadmin WITH PASSWORD 'P@ssw0rd' superuser;
-        psql -U postgres
-        \q
-        echo "Script finished."
-      register: output
+    - name: Create postgres user for my app
+    become: yes
+    become_user: postgres
+    postgresql_user:
+      name: "myappuser"
+      password: "supersecretpassword"
     - debug: 
           var: output.stdout_lines
