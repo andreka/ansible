@@ -6,7 +6,7 @@
   tasks: 
     - name: Execute a PostgreSQL query
       postgresql_query:
-       # db: my_database
+        db: test
         login_user: "nama"
         login_password: "password"
         query: "SELECT version();"
