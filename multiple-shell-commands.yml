@@ -5,12 +5,13 @@
     - name: Run a series of commands
       shell: |
         echo "Starting script..."
+        
         su - postgres
-        psql 
-        \l
-       
+        psql
+        CREATE USER postgresadmin WITH PASSWORD 'P@ssw0rd' superuser;
+        psql -U postgres
+        \q
         echo "Script finished."
       register: output
     - debug: 
           var: output.stdout_lines
-    
