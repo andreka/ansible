@@ -6,9 +6,7 @@
       shell: |
         echo "Starting script..."
         
-        su - postgres
-        psql
-        CREATE USER postgresadmin WITH PASSWORD 'P@ssw0rd' superuser;
+        psql -U postgres
         \q
         echo "Script finished."
       register: output
