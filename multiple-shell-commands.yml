@@ -3,10 +3,10 @@
   hosts: all
   tasks:
     - name: Create postgres user for my app
-      become: yes
-      become_user: postgres
-      postgresql_user:
-        name: "myappuser"
-        password: "supersecretpassword"
+        become: yes
+        become_user: postgres
+        postgresql_user:
+          name: "myappuser"
+          password: "supersecretpassword"
     - debug: 
           var: output.stdout_lines
