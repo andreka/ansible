@@ -1,0 +1,12 @@
+----
+- name: "begin query"
+  hosts: all
+  vars:
+    postgresql_version : 13
+- name: Execute a PostgreSQL query
+  postgresql_query:
+   # db: my_database
+    login_user: "nama"
+    login_password: "password"
+    query: "SELECT version();"
+  register: query_result
