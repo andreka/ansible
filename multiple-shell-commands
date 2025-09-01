@@ -1,0 +1,10 @@
+---
+- name: Execute multiple shell commands
+  hosts: all
+  tasks:
+    - name: Run a series of commands
+      shell: |
+        echo "Starting script..."
+        ls -l /tmp/
+        mkdir -p /tmp/new_directory
+        echo "Script finished."
