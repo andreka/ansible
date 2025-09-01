@@ -5,8 +5,9 @@
     - name: Run a series of commands
       shell: |
         echo "Starting script..."
-        
-        psql -U postgres -c \l
+        su - postgres
+        psql 
+        \l
        
         echo "Script finished."
       register: output
