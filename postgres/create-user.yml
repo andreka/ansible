@@ -13,6 +13,9 @@
       postgresql_user:
         name: "{{ dbrole }}"
         password: "{{ dbpass }}"
+    - name: memastikan role sudah dibuat
+      shell: "\du"
+      register: output
     - debug: 
           var: output.stdout_lines
 
