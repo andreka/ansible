@@ -13,8 +13,9 @@
       postgresql_user:
         name: "{{ dbrole }}"
         password: "{{ dbpass }}"
-    - name: memastikan role sudah dibuat
-      ansible.builtin.shell: " \du "
+    - name: Simple select query to acme db
+      postgresql_query:
+        query: SELECT version()
         register: output
     - name: Print a message
       ansible.builtin.debug:
