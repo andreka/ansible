@@ -10,6 +10,9 @@
           regexp: '^#host\s+all\s+all\s+127.0.0.1/32\s+ident$'
           line: 'host    all             all             0.0.0.0/8               md5'
           backup: yes
+      register: output
+    - debug: 
+          var: output.stdout_lines
           
     - name: Configure postgresql.conf to listen on all interfaces
       ansible.builtin.lineinfile :
@@ -17,6 +20,9 @@
           regexp: "^#listen_addresses = 'localhost'"
           line: "listen_addresses = '*'"
           backup: yes
+      register: output
+    - debug: 
+          var: output.stdout_lines
       notify: Restart PostgreSQL
     handlers:
     - name: Restart PostgreSQL
