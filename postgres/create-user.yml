@@ -13,11 +13,5 @@
       postgresql_user:
         name: "{{ dbrole }}"
         password: "{{ dbpass }}"
-    - name: Simple select query to acme db
-      postgresql_query:
-        query: SELECT version()
-        register: output
-    - name: Print a message
-      ansible.builtin.debug:
-        msg: "This is a debug message {{ output }}"
+    
 
