@@ -8,7 +8,7 @@
         ls -l /tmp/
         mkdir -p /tmp/new_directory
         echo "Script finished."
-      register: stdout
-      debug: 
-          msg: "{{ stdout }}"
+      register: output
+    - debug: 
+          var: output.stdout_lines
     
