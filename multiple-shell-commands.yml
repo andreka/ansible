@@ -9,6 +9,6 @@
         mkdir -p /tmp/new_directory
         echo "Script finished."
       register: stdout
-      debug: 
-        msg: "{{ stdout }}"
+        debug: 
+          msg: "{{ stdout }}"
     
