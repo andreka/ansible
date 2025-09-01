@@ -6,9 +6,8 @@
       shell: |
         echo "Starting script..."
         
-        psql -U postgres
-        \l
-        \q
+        psql -U postgres -c \l
+       
         echo "Script finished."
       register: output
     - debug: 
