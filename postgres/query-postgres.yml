@@ -3,7 +3,7 @@
   hosts: all
   vars:
     postgresql_version : 13
-  task: 
+  tasks: 
     - name: Execute a PostgreSQL query
       postgresql_query:
        # db: my_database
