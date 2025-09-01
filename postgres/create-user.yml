@@ -18,7 +18,7 @@
       become_user: postgres
       postgresql_privs:
         db: test
-        role: "{{ DB_ROLE }}"
+        role: "{{ dbrole }}"
         objs: ALL_IN_SCHEMA
         privs: SELECT,INSERT,UPDATE,DELETE
     
