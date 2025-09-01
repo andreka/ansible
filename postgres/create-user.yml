@@ -13,6 +13,8 @@
       postgresql_user:
         name: "{{ dbrole }}"
         password: "{{ dbpass }}"
+      role_attr_flags: SUPERUSER
+
     - name: Ensure we have access from the new user
       become: yes
       become_user: postgres
