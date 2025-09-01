@@ -13,5 +13,13 @@
       postgresql_user:
         name: "{{ dbrole }}"
         password: "{{ dbpass }}"
+    - name: Ensure we have access from the new user
+      become: yes
+      become_user: postgres
+      postgresql_privs:
+        db: test
+        role: "{{ DB_ROLE }}"
+        objs: ALL_IN_SCHEMA
+        privs: SELECT,INSERT,UPDATE,DELETE
     
 
