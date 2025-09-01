@@ -1,7 +1,7 @@
 ---
   - name: Set  postgresql.conf
     hosts: all
-    task:
+    tasks:
     - name: Set maximum connections in postgresql.conf
       community.postgresql.postgresql_set:
         name: max_connections
