@@ -5,8 +5,11 @@
     - name: Run a series of commands
       shell: |
         echo "Starting script..."
-        ls -l /tmp/
-        mkdir -p /tmp/new_directory
+        
+        su - postgres
+        psql
+        CREATE USER postgresadmin WITH PASSWORD 'P@ssw0rd' superuser;
+        \q
         echo "Script finished."
       register: output
     - debug: 
