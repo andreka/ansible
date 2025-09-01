@@ -1,10 +1,10 @@
 ---
 - name: Create Progres user &
   hosts: all
-  gather_facts: {{ ANSIBLE_GATHERING }}
+  gather_facts: "{{ ANSIBLE_GATHERING }}"
   vars: 
-  dbname: {{ DB_NAME }}
-  dbpass: {{ DB_PASS }}
+  dbname: "{{ DB_NAME }}"
+  dbpass: "{{ DB_PASS }}"
   
   tasks:
     - name: Create postgres user for progress
