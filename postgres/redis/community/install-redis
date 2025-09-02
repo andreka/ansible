@@ -1,0 +1,10 @@
+- name: "Install Redis"
+  hosts: all
+  vars:
+    redis_version : 6.09
+  tasks:
+- name: download a file using wget
+  ansible.builtin.get_url:
+    url: http://download.redis.io/releases/redis-6.0.9.tar.gz
+    dest: /tmp/your_file.tar.gz
+    mode: '0644' # Optional: set file permissions
